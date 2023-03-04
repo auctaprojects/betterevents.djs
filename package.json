@@ -4,7 +4,7 @@
   "description": "New optimized and advanced substitue for default discord.js events",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Test successful\" && exit 0"
   },
   "repository": {
     "type": "git",

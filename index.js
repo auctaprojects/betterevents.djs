@@ -15,5 +15,7 @@ module.exports = (client) => {
                 client.emit(`channelPositionChange`, (oldChannel, newChannel))
             }
         })
+
+        console.log(client)
     }
 }
