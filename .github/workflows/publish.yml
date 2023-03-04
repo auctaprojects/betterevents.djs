@@ -2,7 +2,7 @@ name: test and publish
 
 on: [push]
 jobs:
-  check code:
+  check-code:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -18,7 +18,7 @@ jobs:
 
       - name: Test code
         run: npm test
-  publish package:
+  publish-package:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
