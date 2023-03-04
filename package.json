@@ -1,6 +1,6 @@
 {
   "name": "betterevents.djs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "New optimized and advanced substitue for default discord.js events",
   "main": "index.js",
   "scripts": {
