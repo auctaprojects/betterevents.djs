@@ -1,13 +1,40 @@
-name: publish and test
+name: test and publish
 
 on: [push]
 jobs:
-  check:
+  check code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Install node
+        uses: actions/setup-node@v3
         with:
-          node-version: 12
-      - run: npm install
-      - run: npm test
+          node-version: 19
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Test code
+        run: npm test
+  publish package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Test code
+        run: npm test
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
